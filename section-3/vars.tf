@@ -22,9 +22,7 @@ variable "TO_PORT" {
 variable "PROTOCOL" {
   default = "tcp"
 }
-variable "MY_IP" {
-  default = "45.232.198.119/32"
-}
+variable "MY_IP" {}
 
 //KEY ACCESS
 variable "KEY_NAME" {
