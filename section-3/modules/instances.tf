@@ -4,3 +4,8 @@ resource "aws_instance" "example-instance" {
   instance_type   = "${var.INSTANCE_TYPE}"
   security_groups = "${var.SECURITY_GROUPS}"
 }
+
+resource "aws_eip" "example-elastic-ip" {
+  instance = "${aws_instance.example-instance.id}"
+  vpc      = "${var.IS_IN_VPC}"
+}

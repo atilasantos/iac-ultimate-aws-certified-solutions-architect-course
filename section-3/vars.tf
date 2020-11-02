@@ -28,5 +28,7 @@ variable "MY_IP" {}
 variable "KEY_NAME" {
   default = "mykey"
 }
-
 variable "PUB_KEY" {}
+variable "IS_IN_VPC" {
+  default = true
+}
