@@ -3,6 +3,7 @@ resource "aws_instance" "example-instance" {
   ami             = "${var.AMI}"
   instance_type   = "${var.INSTANCE_TYPE}"
   security_groups = "${var.SECURITY_GROUPS}"
+  user_data       = "#!/bin/bash\napt-get update\napt-get install -y nginx\nsystemctl start nginx\nsystemctl enable nginx"
 }
 
 resource "aws_eip" "example-elastic-ip" {
