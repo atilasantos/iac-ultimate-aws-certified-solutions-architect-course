@@ -5,12 +5,14 @@ variable "INSTANCE_TYPE" {
 }
 
 //SECURITY GROUP VARIABLES
-variable "FROM_PORT" {}
-variable "TO_PORT" {}
 variable "PROTOCOL" {}
 variable "MY_IP" {}
 variable "SECURITY_GROUPS" {}
 variable "KEY_NAME" {}
 variable "IS_IN_VPC" {
   default = true
+}
+variable "INGR_PORTS" {
+  type = "list"
+  default = [22, 80]
 }

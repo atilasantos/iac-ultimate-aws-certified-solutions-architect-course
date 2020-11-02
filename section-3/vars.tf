@@ -2,7 +2,7 @@
 variable "AMI" {
   type = "map"
   default = {
-    "sp-east-1" = "ami-02898a1921d38a50b"
+    "sp-east-1" = "ami-02dc8ad50da58fffd"
   }
 }
 variable "REGION" {
@@ -13,12 +13,6 @@ variable "INSTANCE_TYPE" {
 }
 
 #SECURITY GROUP VARIABLES
-variable "FROM_PORT" {
-  default = 22
-}
-variable "TO_PORT" {
-  default = 22
-}
 variable "PROTOCOL" {
   default = "tcp"
 }
@@ -32,3 +26,9 @@ variable "PUB_KEY" {}
 variable "IS_IN_VPC" {
   default = true
 }
+
+variable "INGR_PORTS" {
+  type = "list"
+  default = [22, 80]
+}
+
