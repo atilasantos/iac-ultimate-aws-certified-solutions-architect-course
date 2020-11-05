@@ -26,9 +26,7 @@ variable "PUB_KEY" {}
 variable "IS_IN_VPC" {
   default = true
 }
-
 variable "INGR_PORTS" {
   type = "list"
   default = [22, 80]
 }
-
