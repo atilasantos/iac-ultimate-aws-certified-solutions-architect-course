@@ -6,6 +6,6 @@ variable "INSTANCE_TYPE" {
 
 variable "KEY_NAME" {}
 
-variable "IS_IN_VPC" {}
+# variable "IS_IN_VPC" {}
 
 variable "SECURITY_GROUPS" {}

@@ -2,17 +2,13 @@ resource "aws_security_group" "example-security-group" {
   name        = "Allow ssh"
   description = "Allow ssh just for my PC"
 
-  dynamic "ingress" {
-    for_each = "${var.INGR_PORTS}"
-    content {
-      description = "SSH allowed"
-      from_port   = ingress.value
-      to_port     = ingress.value
-      protocol    = "${var.PROTOCOL}"
-      cidr_blocks = ["${var.MY_IP}"]
-    }
+  ingress {
+    description     = "SSH allowed"
+    from_port       = 80
+    to_port         = 80
+    protocol        = "tcp"
+    security_groups = ["${var.CLB_SG}"]
   }
-
   egress {
     description = "Allow access to www"
     from_port   = 0
@@ -23,6 +19,6 @@ resource "aws_security_group" "example-security-group" {
   }
 
   tags = {
-    "Name" = "SG allowing SSH"
+    "Name" = "instance-security-group"
   }
 }

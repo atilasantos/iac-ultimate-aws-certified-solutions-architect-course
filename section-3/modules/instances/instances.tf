@@ -6,7 +6,7 @@ resource "aws_instance" "example-instance" {
   user_data       = "#!/bin/bash\napt-get update\napt-get install -y nginx\nsystemctl start nginx\nsystemctl enable nginx"
 }
 
-resource "aws_eip" "example-elastic-ip" {
-  instance = "${aws_instance.example-instance.id}"
-  vpc      = "${var.IS_IN_VPC}"
-}
+# resource "aws_eip" "example-elastic-ip" {
+#   instance = "${aws_instance.example-instance.id}"
+#   vpc      = "${var.IS_IN_VPC}"
+# }
